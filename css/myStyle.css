@@ -1,0 +1,16 @@
+/* Map */
+#map {
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: 0;
+    z-index: 0;
+    position: absolute;
+}
+
+/* Show/Hide List toggle button */
+.toggle-listview-button {
+    width:100px;
+    font-size: 13px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Run of the mill standard head related tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Udacity FEND Neighborhood Map Project</title>
+        <!-- Bootstrap minified CSS and JQuery libraries -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!-- Customized CSS for this project -->
+        <link rel="stylesheet" href="css/myStyle.css">
+
+    </head>
+    <body>
+        <!-- Bootstrap CSS classes used mostly for mobile friendly experience-->
+        <div class="container-fluid">
+            <!-- Gooogle Map element -->
+            <div id="map">
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <!-- Search/filter textbox using KO observable -->
+                    <input type="text" placeholder="Search for location" name="SearchBox" data-bind="value: searchStr, valueUpdate: 'afterkeydown'">
+                </div>
+                <!-- Display list visibility toggle button -->
+                <div class="col-md-2" onclick="toggleListDisplay()">
+                    <input class="toggle-listview-button" type="button" value="Hide List" id="showHide"></input>
+                </div>
+                <div class="col-md-8">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+            </div>
+            <div class="row">
+                <!-- Location Title List using KO observable -->
+                <div class="col-md-2 list-group" data-bind="foreach: locationList" id="locList">
+                    <small><a href="#" class="list-group-item" data-bind="text: title, click: $parent.showInfoWindow"></a></small>
+                </div>
+            </div>
+        </div>
+
+        <!-- KO and project related JS -->
+        <script src="js/knockout-3.4.2.js"></script>
+        <script src="js/myData.js"></script>
+        <script src="js/myMain.js"></script>
+        <!-- Google Maps JS API call -->
+        <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC5_cO7khgAw2Zwwshr1GP4ezuZWCj3zsU&callback=initMap" onerror="googleMapError()">
+        </script>
+    </body>
+</html>
