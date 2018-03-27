@@ -48,7 +48,7 @@ var ViewModel = function() {
             wikiResponse = 'No wiki data found!!!';
 
             // Wikipedia async call. Raising Error alert if no Wiki response in 8 sec
-            var wikiUrl = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + this.title + '&format=json&callback=wikiCallback';
+            var wikiUrl = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + this.title + '&format=json&callback=wikiCallback';
             var wikiRequestTimeout = setTimeout(function(){
                 alert("Error: Failed to get Wikipedia resources!!!");
             }, 8000);
